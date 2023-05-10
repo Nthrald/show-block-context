@@ -1,3 +1,6 @@
+// Nthrald
+import ServerSideRender from '@wordpress/server-side-render';
+
 /**
  * Retrieves the translation of text.
  *
@@ -12,6 +15,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
+import metadata from './block.json';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,11 +35,10 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Show Block Context – hello from the editor!',
-				'show-block-context'
-			) }
-		</p>
+		<div { ...useBlockProps() }>
+	        <ServerSideRender
+	          block={ metadata.name }
+	        />
+	    </div>
 	);
 }

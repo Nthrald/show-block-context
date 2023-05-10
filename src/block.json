@@ -1,13 +1,14 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
-	"name": "nthrald-custom/show-block-context",
-	"version": "0.1.0",
-	"title": "Show Block Context",
-	"category": "nthrald-custom",
-	"description": "Show $block->context in HTML",
-	"textdomain": "show-block-context",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "nthrald-custom/show-block-context",
+    "version": "0.1.0",
+    "title": "Show Block Context",
+    "category": "nthrald-custom",
+    "description": "Show ->context in HTML",
+    "textdomain": "show-block-context",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "usesContext": [ "postId", "postType" ]
 }
