@@ -33,12 +33,12 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
-	return (
-		<div { ...useBlockProps() }>
-	        <ServerSideRender
-	          block={ metadata.name }
-	        />
+export default function Edit( {context: {postId, postType}} ) {
+    return (
+	    <div { ...useBlockProps() }>
+	    <div>{postId}</div>
+	    <div>{postType}</div>
+	    <ServerSideRender block={ metadata.name }/>
 	    </div>
 	);
 }
